@@ -35,17 +35,10 @@ public class ControllerServlet extends HttpServlet {
 
 		// Get all details operation
 		if (request.getRequestURI().endsWith("getAllStudentDetails")) {
-
 			List<Student> students = studentService.getAllStudentDetails();
-			String path = null;
-			if (students != null) {
-				path = "../pages/get/getAllStudentPage.jsp";
-				request.setAttribute("students", students);
-				forwardToPage(path, request, response);
-			} else {
-				path = "../pages/common/student_not_found.jsp";
-				forwardToPage(path, request, response);
-			}
+			String path = "../pages/get/getAllStudentPage.jsp";
+			request.setAttribute("students", students);
+			forwardToPage(path, request, response);
 		}
 
 		// InsertOperation
@@ -74,7 +67,6 @@ public class ControllerServlet extends HttpServlet {
 
 		// UpdateOperation
 		if (request.getRequestURI().endsWith("findStudentDetailsById")) {
-
 			String id = request.getParameter("studentId");
 			Student student = studentService.getStudentDetailsById(Integer.parseInt(id));
 			System.out.println(student);

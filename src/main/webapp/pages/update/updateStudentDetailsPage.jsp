@@ -21,7 +21,7 @@
 					<table>
 						<tr>
 							<th>Student ID</th>
-							<td><input type="hidden" name="studentId"
+							<td><input type="text" readonly="readonly" name="studentId"
 								value="${student.id}" /></td>
 						</tr>
 						<tr>
